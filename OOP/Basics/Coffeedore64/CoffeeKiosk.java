@@ -65,11 +65,24 @@ public class CoffeeKiosk {
 
     // Create a method that lets an admin add menu items manually, using what you now know about getting user input.
     public void addMenuItemByInput(){
-        System.out.print("Please enter the new menu item's name: ");
-        String name = System.console().readLine();
-        System.out.print("Please enter the price for the new menu item: $");
-        double price = Double.parseDouble(System.console().readLine());
-        addMenuItem(name, price);
-        displayMenu();
+        String isCompleted = "y";
+        while(isCompleted.equals("y")) {
+            System.out.print("Please enter the new menu item's name: ");
+            String name = System.console().readLine();
+            while(name.isEmpty()){
+                System.out.println("Please enter a valid name:");
+                name = System.console().readLine();
+            }
+            System.out.print("Please enter the price for the new menu item: $");
+            String itemPrice = System.console().readLine();
+            while(itemPrice.isEmpty()){
+                System.out.println("Please enter a valid price:");
+                itemPrice = System.console().readLine();
+            }
+            double price = Double.parseDouble(itemPrice);
+            addMenuItem(name, price);
+            System.out.println("Do you want to add another product? y/n:");
+            isCompleted = System.console().readLine().toLowerCase();
+        }
     }
 }
