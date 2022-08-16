@@ -8,9 +8,9 @@ public abstract class Art {
 	public abstract void viewArt();
 	
 	public Art(String title, String author, String description) {
-		this.setTitle(title);
-		this.setAuthor(author);
-		this.setDescription(description);
+		this.title = title;
+		this.author = author;
+		this.description = description;
 	}
 
 	public String getTitle() {

@@ -5,7 +5,7 @@ public class Painting extends Art {
 	
 	public Painting(String paintType, String title, String author, String description) {
 		super(title, author, description);
-		this.setPaintType(paintType);
+		this.paintType = paintType;
 	}
 
 	public String getPaintType() {

@@ -5,7 +5,7 @@ public class Sculpture extends Art {
 	
 	public Sculpture(String material, String title, String author, String description) {
 		super(title, author, description);
-		this.setMaterial(material);
+		this.material = material;
 	}
 
 	public String getMaterial() {
