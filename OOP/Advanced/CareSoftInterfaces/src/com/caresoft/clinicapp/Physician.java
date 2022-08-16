@@ -10,7 +10,6 @@ public class Physician extends User implements HIPAACompliantUser {
     // Constructor that takes an ID
     public Physician(Integer id) {
     	super(id);
-    	this.id = id;
     }
     
     // Implement HIPAACompliantUser!
