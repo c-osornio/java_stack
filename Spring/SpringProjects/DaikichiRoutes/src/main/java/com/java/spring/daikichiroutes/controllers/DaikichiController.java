@@ -30,9 +30,9 @@ public class DaikichiController {
 	@RequestMapping("/lotto/{number}")
 	public String showLotto(@PathVariable("number") int number) {
 		if (number%2 == 0) { // if even
-			return "You will take a grand journey in the near future, but be weary of tempting offers";
+			return "<h1 style=color:red>You will take a grand journey in the near future, but be weary of tempting offers.</h1>";
 		} else { // if odd
-			return "You have enjoyed the fruits of your labor but now is a great time to spend time with family and friends.";
+			return "<h1 style=color:blue>You have enjoyed the fruits of your labor but now is a great time to spend time with family and friends.</h1>";
 		}
 	}
 }
