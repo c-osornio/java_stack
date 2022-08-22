@@ -32,7 +32,7 @@ public class MainController {
 	public String counter(HttpSession session, Model model) {
 		Integer currentCount = 0;
 		if (session.getAttribute("count") == null) {
-			session.setAttribute("count", 0);
+			session.setAttribute("count", currentCount);
 		} else {
 			currentCount = (Integer)session.getAttribute("count");
 		}
