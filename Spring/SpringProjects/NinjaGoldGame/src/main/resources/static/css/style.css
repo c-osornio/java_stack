@@ -1,0 +1,31 @@
+h1 {
+    width: 1000px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.main {
+    align-items: center;
+    text-align: center;
+	margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 1250px;
+    margin: auto;
+}
+
+.box {
+    border: 2px solid black;
+    text-align: center;
+    width: 225px;
+    padding-bottom: 10px;
+}
+.log {
+	overflow: scroll;
+	height:200px;
+	width:1000px;
+	border:1px solid black;
+	margin:auto;
+}
