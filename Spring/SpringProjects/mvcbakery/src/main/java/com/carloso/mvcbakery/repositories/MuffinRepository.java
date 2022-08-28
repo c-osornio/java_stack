@@ -13,6 +13,6 @@ public interface MuffinRepository extends CrudRepository<Muffin, Long>{
 	
 	List <Muffin> findAll();
 	List <Muffin> findByFrostingContaining(String search);
-	Optional<Muffin> findById(long id);
+	Optional<Muffin> findById(Long id);
 	Long countByFrostingContaining(String search);
 }

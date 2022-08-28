@@ -7,48 +7,26 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>SAVE TRAVELS</title>
+    <title>Edit ${expense.name} Expense!</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">     
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body class="bg-success">
-    <div class="container width=1000px">
-	    <h1 class="text-warning mt-5 text-center" >Save Travels</h1>
-	   
-	    <table class="table mt-3 table-dark table-striped text-warning rounded">
-			<thead>
-				<tr>
-					<th scope="col">Expense</th>
-					<th scope="col">Vendor</th>
-					<th scope="col">Amount</th>
-					<th scope="col">Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="expense" items="${expenses}">
-				<tr>
-					<td><c:out value="${expense.name}"/></td>
-					<td><c:out value="${expense.vendor}"/></td>
-					<td>$<c:out value="${expense.amount}"/></td>
-					<td><a href="/expenses/<c:out value="${expense.id}/edit"/>">edit</a></td>
-				</tr>
-				</c:forEach>
-			</tbody>
-	    </table>
-    </div>
-    
-    
-    
-    <div class="container row p-3 mx-auto bg-dark text-primary rounded">
-    	<h2 class="text-center">ADD EXPENSE</h2>
+    <div class="container row p-3 mx-auto bg-dark text-warning rounded mt-5">
+		<div class="d-flex justify-content-center gap-3">
+	    	<h1 class="text-warning text-warning text-center">Edit ${expense.name} expense</h1>
+	    	<a href="/expenses" class="mt-2 ps-3">Go back</a>
+		</div>   
     	<div class="col-6 mx-auto">
-			<form:form action="/expenses" method="post" modelAttribute="expense">
+			<form:form action="/expense/${expense.id}" method="post" modelAttribute="expense">
+			<input type="hidden" name="_method" value="put">
 			<div class="form-group mt-1 row">
 			    <h4>
 			        <form:label class="col col-form-label text-start" path="name">Expense Name:</form:label>
@@ -77,12 +55,11 @@
 			        <form:textarea class="form-control" path="description"/>
 			    </h4>    
 			</div>
-		    <button class="mt-2 btn btn-primary">Submit</button>
+		    <button class="mt-2 btn btn-warning">Submit</button>
 			</form:form>    
     	</div>
 
     	
     </div>
-    
 </body>
 </html>

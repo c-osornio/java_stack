@@ -21,5 +21,11 @@ public class ExpenseService {
 		return expenseRepo.save(e);
 	}
 	
-	
+    public Expense findExpense(Long id) {
+    	return expenseRepo.findById(id).orElse(null);
+    }
+    
+    public void updateExpense(Expense e) {
+    	expenseRepo.save(e);
+    }
 }
