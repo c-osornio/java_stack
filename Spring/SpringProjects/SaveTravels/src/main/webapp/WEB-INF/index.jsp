@@ -21,7 +21,7 @@
     <div class="container width=1000px">
 	    <h1 class="text-warning mt-5 text-center" >Save Travels</h1>
 	   
-	    <table class="table mt-3 table-dark table-striped text-warning rounded">
+	    <table class="table mt-3 table-dark text-warning rounded">
 			<thead>
 				<tr>
 					<th scope="col">Expense</th>
@@ -33,10 +33,16 @@
 			<tbody>
 				<c:forEach var="expense" items="${expenses}">
 				<tr>
-					<td><c:out value="${expense.name}"/></td>
+					<td><a href="expenses/<c:out value="${expense.id}"/>"><c:out value="${expense.name}"/></a></td>
 					<td><c:out value="${expense.vendor}"/></td>
 					<td>$<c:out value="${expense.amount}"/></td>
-					<td><a href="/expenses/<c:out value="${expense.id}/edit"/>">edit</a></td>
+					<td class="d-flex gap-3">
+						<a href="/expenses/<c:out value="${expense.id}"/>/edit">edit</a>
+						<form action="/expenses/<c:out value="${expense.id}"/>/delete" method="post">
+				    		<input type="hidden" name="_method" value="delete">
+				    		<button class="mt-2 btn btn-danger">Delete</button>
+						</form>
+					</td>
 				</tr>
 				</c:forEach>
 			</tbody>

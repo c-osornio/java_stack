@@ -21,7 +21,7 @@
 <body class="bg-success">
     <div class="container row p-3 mx-auto bg-dark text-warning rounded mt-5">
 		<div class="d-flex justify-content-center gap-3">
-	    	<h1 class="text-warning text-warning text-center">Edit ${expense.name} expense</h1>
+	    	<h1 class="text-warning text-warning text-center">Edit ${expense.name} Expense</h1>
 	    	<a href="/expenses" class="mt-2 ps-3">Go back</a>
 		</div>   
     	<div class="col-6 mx-auto">
