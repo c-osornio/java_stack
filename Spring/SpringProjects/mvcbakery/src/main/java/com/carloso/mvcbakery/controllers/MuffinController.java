@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.carloso.mvcbakery.models.Chef;
 import com.carloso.mvcbakery.models.Muffin;
+import com.carloso.mvcbakery.services.ChefService;
 import com.carloso.mvcbakery.services.MuffinService;
 
 @Controller
@@ -24,6 +26,9 @@ public class MuffinController {
 	@Autowired
 	MuffinService muffinService;
 	
+	@Autowired
+	ChefService chefService;
+	
 	@GetMapping("/")
 	public String index(@ModelAttribute("muffin") Muffin muffin, Model model) {
 		List <Muffin> allTheMuffins = muffinService.allMuffins();
@@ -31,10 +36,17 @@ public class MuffinController {
 		return "index.jsp";
 	}
 	
+	@GetMapping("/muffin/new")
+	public String newMuffin(@ModelAttribute("muffin") Muffin muffin, Model model) {
+		List <Chef> allChefs = chefService.allChefs();
+		model.addAttribute("allChefs", allChefs);
+		return "newMuffin.jsp";
+	}
+	
 	@PostMapping("/muffin/create")
 	public String createMuffin(@Valid @ModelAttribute("muffin") Muffin muffin, BindingResult result) {
 		if (result.hasErrors()) {
-			return "index.jsp";
+			return "newMuffin.jsp";
 		} else {
 			muffinService.createMuffin(muffin);
 			return "redirect:/";

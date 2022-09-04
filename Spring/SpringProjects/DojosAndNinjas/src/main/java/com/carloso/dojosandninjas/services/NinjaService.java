@@ -13,7 +13,7 @@ import com.carloso.dojosandninjas.repositories.NinjaRepository;
 public class NinjaService {
 	
 	@Autowired
-	NinjaRepository ninjaRepo;
+	private NinjaRepository ninjaRepo;
 	
 	public List<Ninja> allNinjas() {
 		return ninjaRepo.findAll();

@@ -20,29 +20,29 @@
 <body>
 	<h1><c:out value ="${dojo.name}"/> Location Ninjas</h1>
 	<table class="table mt-3 table-dark text-warning rounded">
-            <thead>
-                <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach var="ninja" items="${dojo.ninjas}">
-                    <tr>
-                        <td>
-                            <c:out value="${ninja.first_name}" />
-                        </td>
-                        <td>
-                            <c:out value="${ninja.last_name}" />
-                        </td>
-                        <td>
-                            <c:out value="${ninja.age}" />
-                        </td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+	    <thead>
+	        <tr>
+	            <th scope="col">First Name</th>
+	            <th scope="col">Last Name</th>
+	            <th scope="col">Age</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <c:forEach var="ninja" items="${dojo.ninjas}">
+	            <tr>
+	                <td>
+	                    <c:out value="${ninja.first_name}" />
+	                </td>
+	                <td>
+	                    <c:out value="${ninja.last_name}" />
+	                </td>
+	                <td>
+	                    <c:out value="${ninja.age}" />
+	                </td>
+	            </tr>
+	        </c:forEach>
+	    </tbody>
+	</table>
 
 </body>
 </html>

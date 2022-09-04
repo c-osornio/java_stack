@@ -58,8 +58,9 @@ public class HomeController {
 	}
 	
 	@PostMapping("/ninjas/new")
-	public String createNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult results) {
+	public String createNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult results, Model model) {
 		if (results.hasErrors()) {
+			model.addAttribute("dojos", dojoService.allDojos());
 			return "ninjaForm.jsp";
 		} else {
 			ninjaService.createNinja(ninja);

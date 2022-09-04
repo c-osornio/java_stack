@@ -38,12 +38,8 @@ public class SongService {
 		return songRepo.findByArtistContaining(artist);
 	}
 	
-	public List<Song> findByTitle(String title) {
-		return songRepo.findByTitleContaining(title);
-	}
-	
 	public List<Song> topTen() {
-		return songRepo.getTopTen();
+		return songRepo.findTop10ByOrderByRatingDesc();
 	}
 }
 

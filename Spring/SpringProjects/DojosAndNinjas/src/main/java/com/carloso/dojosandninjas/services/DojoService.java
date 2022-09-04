@@ -12,7 +12,7 @@ import com.carloso.dojosandninjas.repositories.DojoRepository;
 public class DojoService {
 
 	@Autowired
-	DojoRepository dojoRepo;
+	private DojoRepository dojoRepo;
 	
 	public List<Dojo> allDojos() {
 		return dojoRepo.findAll();
