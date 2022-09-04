@@ -18,30 +18,13 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Submit a muffin!</h1>
-	<form:form action="/muffin/create" method="POST" modelAttribute="muffin">
-		<div>
-			<form:label path="flavor">Flavor</form:label>
-			<form:errors class="text-danger" path="flavor"/>
-			<form:input type="text" path="flavor"/>
-		</div>
-		<div>
-			<form:label path="frosting">Frosting</form:label>
-			<form:errors class="text-danger" path="frosting"/>
-			<form:input type="text" path="frosting"/>
-		</div>
-		<div>
-			<form:label path="calories">Calories</form:label>
-			<form:errors class="text-danger" path="calories"/>
-			<form:input type="number" path="calories"/>
-		</div>	
-		<button>Submit</button>	
-	</form:form>
+
     <h1>All Muffins</h1>
+    <a href="/muffin/new">Add a new muffin!</a>
     <ul>
         <c:forEach var="muffin" items="${muffins}">
             <li>
-                <a href="/muffin/${muffin.id}/edit"><c:out value="${muffin.flavor}"/></a>
+                <a href="/muffin/${muffin.id}/edit"><c:out value="${muffin.name}"/> by <c:out value="${muffin.chef.name}"/></a>
                 <form action="/muffin/${muffin.id}/delete" method="post">
 				    <input type="hidden" name="_method" value="delete">
 				    <button>Delete</button>

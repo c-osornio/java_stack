@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -24,6 +27,8 @@ public class Muffin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String name;
+	
 	@NotNull
 	@Size(min = 4, max = 100, message= "Flavor name is either too short or too long, bro")
 	private String flavor;
@@ -35,6 +40,10 @@ public class Muffin {
 	@NotNull(message= "Provide amount for calories and keep it over 250 breh")
 	@Min(250)
 	private Integer calories;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="chef_id")
+	private Chef chef;
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -51,6 +60,26 @@ public class Muffin {
 		this.flavor = flavor;
 		this.frosting = frosting;
 		this.calories = calories;
+	}
+	
+
+	public Chef getChef() {
+		return chef;
+	}
+
+
+	public void setChef(Chef chef) {
+		this.chef = chef;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
