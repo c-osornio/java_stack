@@ -1,4 +1,4 @@
-package com.carloso.loginandregistration;
+package com.carloso.bookclub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.carloso.loginandregistration;
+package com.carloso.bookclub;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

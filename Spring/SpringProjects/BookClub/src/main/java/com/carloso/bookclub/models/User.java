@@ -1,12 +1,16 @@
-package com.carloso.loginandregistration.models;
+package com.carloso.bookclub.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -45,6 +49,9 @@ public class User {
     @Transient
     @AssertTrue(message="*Please accept terms and conditions.")
     private boolean terms;
+    
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	private List<Book> books;
     
 	@Column(updatable = false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -121,6 +128,16 @@ public class User {
 
 	public void setTerms(boolean terms) {
 		this.terms = terms;
+	}
+
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 

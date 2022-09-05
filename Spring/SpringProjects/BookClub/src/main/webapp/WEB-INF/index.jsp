@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login & Registration</title>
+    <title>Book Club</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -19,8 +19,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="welcome mt-5 fw-bold">Welcome!</h1>
-		<h2 class="mb-5 fs-6">Join our growing community.</h2>
+		<h1 class="welcome mt-5 fw-bold">Welcome to Book Club!</h1>
+		<h2 class="mb-5 fs-6">A place for friends to share thoughts on books.</h2>
 		<div class="row gap-5">
 			<form:form action="/register" method="post" modelAttribute="newUser" class="col-4">
 				<h2 class="fw-bold">Register</h2>
@@ -36,12 +36,12 @@
 				</div>
 				<div>
 					<form:label path="password">Password: </form:label>
-					<form:input class="form-control" path="password" />
+					<form:input class="form-control" path="password" type="password"/>
 					<form:errors class="text-danger" path="password"/>
 				</div>
 				<div>
 					<form:label path="confirmPW">Confirm Password: </form:label>
-					<form:input class="form-control" path="confirmPW"/>
+					<form:input class="form-control" path="confirmPW" type="password"/>
 					<form:errors class="text-danger" path="confirmPW"/>
 				</div>
 				<div>

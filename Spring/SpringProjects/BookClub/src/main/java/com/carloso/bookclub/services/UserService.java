@@ -1,4 +1,4 @@
-package com.carloso.loginandregistration.services;
+package com.carloso.bookclub.services;
 
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.carloso.loginandregistration.models.LoginUser;
-import com.carloso.loginandregistration.models.User;
-import com.carloso.loginandregistration.repositories.UserRepository;
+import com.carloso.bookclub.models.LoginUser;
+import com.carloso.bookclub.models.User;
+import com.carloso.bookclub.repositories.UserRepository;
 
 @Service
 public class UserService {
