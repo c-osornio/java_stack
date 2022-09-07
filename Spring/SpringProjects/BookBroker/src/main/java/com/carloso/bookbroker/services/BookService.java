@@ -1,12 +1,13 @@
-package com.carloso.bookclub.services;
+package com.carloso.bookbroker.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.carloso.bookclub.models.Book;
-import com.carloso.bookclub.repositories.BookRepository;
+import com.carloso.bookbroker.models.Book;
+import com.carloso.bookbroker.models.User;
+import com.carloso.bookbroker.repositories.BookRepository;
 
 @Service
 public class BookService {
@@ -34,4 +35,25 @@ public class BookService {
     	bookRepo.deleteById(id);
     }
 
+	public List<Book> availableBooks(){
+		return bookRepo.findByBorrowerIdIs(null);
+	}
+	
+	public List<Book> borrowedBooks(User user){
+		return bookRepo.findByBorrowerIdIs(user.getId());
+	}
+	
+	public List<Book> userBooks(User user){
+		return bookRepo.findByUserIdIs(user.getId());
+	}
+	
+	public void removeBorrower(Book book) {
+		book.setBorrower(null);
+		bookRepo.save(book);
+	}
+	
+	public void addBorrower(Book book, User user) {
+		book.setBorrower(user);
+		bookRepo.save(book);
+	}
 }
