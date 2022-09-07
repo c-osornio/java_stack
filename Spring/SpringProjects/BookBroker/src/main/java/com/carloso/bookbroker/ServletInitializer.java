@@ -1,4 +1,4 @@
-package com.carloso.bookclub;
+package com.carloso.bookbroker;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(AuthenticationApplication.class);
+		return application.sources(BookBrokerApplication.class);
 	}
 
 }

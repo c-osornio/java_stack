@@ -1,4 +1,4 @@
-package com.carloso.bookclub.controllers;
+package com.carloso.bookbroker.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.carloso.bookclub.models.LoginUser;
-import com.carloso.bookclub.models.User;
-import com.carloso.bookclub.services.UserService;
+import com.carloso.bookbroker.models.LoginUser;
+import com.carloso.bookbroker.models.User;
+import com.carloso.bookbroker.services.UserService;
 
 @Controller
 public class UserController {

@@ -1,4 +1,4 @@
-package com.carloso.bookclub.models;
+package com.carloso.bookbroker.models;
 
 import java.util.Date;
 import java.util.List;
@@ -50,8 +50,13 @@ public class User {
     @AssertTrue(message="*Please accept terms and conditions.")
     private boolean terms;
     
+    @Column(updatable=false)
 	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<Book> books;
+    
+    @Column(updatable=false)
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	private List<Book> borrowedbooks;
     
 	@Column(updatable = false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -138,6 +143,16 @@ public class User {
 
 	public void setBooks(List<Book> books) {
 		this.books = books;
+	}
+
+
+	public List<Book> getBorrowedbooks() {
+		return borrowedbooks;
+	}
+
+
+	public void setBorrowedbooks(List<Book> borrowedbooks) {
+		this.borrowedbooks = borrowedbooks;
 	}
 
 

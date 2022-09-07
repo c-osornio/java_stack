@@ -1,4 +1,4 @@
-package com.carloso.bookclub.models;
+package com.carloso.bookbroker.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
