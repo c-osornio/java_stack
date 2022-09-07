@@ -20,13 +20,15 @@
 <body>
 	<div class="container d-flex justify-content-between  mt-5">
 		<div>
-			<h1 class="welcome fw-bold">Welcome, <c:out value="${name}"/>!</h1>
+			<h1 class="welcome fw-bold">Welcome, <c:out value="${user.username}"/>!</h1>
 			<h2 class="mb-5 fs-6">Books from everyone's shelves:</h2>
 		</div>
 		<div>
 			<a class="fs-6" href="/logout">logout</a>
 			<br>
 			<a class="fs-6" href="/books/new">+Add Book to shelf!</a>
+			<br>
+			<a class="fs-6" href="/books/bookmarket">Check out the Book Market!</a>
 		</div>
 	</div>
 	<div class="container">

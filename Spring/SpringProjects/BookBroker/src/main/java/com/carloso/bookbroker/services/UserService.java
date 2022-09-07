@@ -1,4 +1,4 @@
-package com.carloso.bookclub.services;
+package com.carloso.bookbroker.services;
 
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.carloso.bookclub.models.LoginUser;
-import com.carloso.bookclub.models.User;
-import com.carloso.bookclub.repositories.UserRepository;
+import com.carloso.bookbroker.models.LoginUser;
+import com.carloso.bookbroker.models.User;
+import com.carloso.bookbroker.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -25,18 +25,26 @@ public class UserService {
 	
 	public User register(User newUser, BindingResult result) {
     	Optional<User> potentialUser = userRepo.findByEmail(newUser.getEmail());
+    	
+    	// Before saving, capitalized first letter of provided username
+		String name = newUser.getUsername().substring(0, 1).toUpperCase() + newUser.getUsername().substring(1);
+		newUser.setUsername(name);
+		
     	// Reject if email is taken (present in database)
     	if(potentialUser.isPresent()) {
     		result.rejectValue("email", "Matches", "*An account with that email already exists!");
     	}
-        // Reject if password doesn't match confirmation
+    	
+        // Reject if password doesn't match confirmPW
     	if(!newUser.getPassword().equals(newUser.getConfirmPW())) {
     		result.rejectValue("confirmPW", "Matches", "*Passwords do not match!");
     	}
+    	
     	// Return null if result has errors
     	if(result.hasErrors()) {
     		return null;
     	}
+    	
     	// Reject if password does not match regexp 
     	String regExp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,128}$";
     	String password = newUser.getPassword();

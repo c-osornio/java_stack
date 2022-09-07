@@ -40,10 +40,10 @@
 		</div>
 		<div class="d-flex gap-2">
 			<c:if test="${book.user.id == user.id}">
-				<a href="/books/${book.id}/edit"><button class="btn-warning text-white">edit</button></a>
+				<a href="/books/${book.id}/edit"><button class="btn btn-warning text-white">edit</button></a>
 				<form action="/books/${book.id}/delete" method="post">
     				<input type="hidden" name="_method" value="delete">
-    				<button class="btn-danger">delete</button>
+    				<button class="btn btn-danger">delete</button>
 				</form>
 			</c:if>
 		</div>

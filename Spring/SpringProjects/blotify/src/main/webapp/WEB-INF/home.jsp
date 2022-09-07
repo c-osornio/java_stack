@@ -19,6 +19,16 @@
 </head>
 <body>
 	<h1>Welcome <c:out value="${user.username}"/></h1>
+	
+	<ul>
+		<c:forEach var="playlist" items="${user.playlists}">
+			<li>
+				<c:out value="${playlist.name}"/>
+			</li>
+		</c:forEach>
+	</ul>
+	
+	<a href="/playlist/create"><button class="btn btn-danger">New Playlist</button></a>
 	<a href="/logout"><button class="btn btn-danger">Logout</button></a>
 </body>
 </html>
