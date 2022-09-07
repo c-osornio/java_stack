@@ -129,6 +129,16 @@ public class User {
 		return updatedAt;
 	}
 	
+	public List<Playlist> getPlaylists() {
+		return playlists;
+	}
+
+
+	public void setPlaylists(List<Playlist> playlists) {
+		this.playlists = playlists;
+	}
+
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
