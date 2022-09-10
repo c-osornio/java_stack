@@ -42,7 +42,7 @@
 	<div class="container">
 		<form action="/categories/${id}" method="post">
 		<h2>Add Product:</h2>
-		<select name="productId" id="productId" class="mt-2 input form-control">
+		<select name="productId" class="mt-2 form-control">
 			<c:forEach var="product" items="${unassignedProducts}">
 				<option value="${product.id}">${product.name}</option>
 			</c:forEach>
