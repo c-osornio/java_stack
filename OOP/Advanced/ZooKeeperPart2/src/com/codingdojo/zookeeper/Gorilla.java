@@ -25,3 +25,4 @@ public class Gorilla extends Mammal{
 		System.out.println("This is a Gorilla!");
 	}
 }
+
