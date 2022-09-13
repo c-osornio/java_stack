@@ -1,6 +1,7 @@
 package com.carloso.studentroster.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
@@ -35,6 +38,15 @@ public class Student {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="dorm_id")
 	private Dorm dorm;
+	
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(
+        name="students_subjects", 
+        joinColumns=@JoinColumn(name="studentId"), 
+        inverseJoinColumns=@JoinColumn(name="subjectId")
+    )
+    private List<Subject> subjects;
+
 
 	public Student() {
 	}
@@ -76,6 +88,14 @@ public class Student {
 		return updatedAt;
 	}
 	
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
