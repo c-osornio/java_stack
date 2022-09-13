@@ -23,7 +23,7 @@ public class StudentService {
 		return studentRepo.findAllByDormIdIs(dormId);
 	}
 	
-	public Student findStudent(long id) {
+	public Student findStudent(Long id) {
 		return studentRepo.findById(id).orElse(null);
 	}
 	

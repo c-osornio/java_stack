@@ -22,13 +22,17 @@ import com.carloso.studentroster.services.StudentService;
 @RequestMapping("/dorms")
 public class DormController {
 
+	// SERVICES
+	
 	@Autowired
 	private DormService dormService;
 	
 	@Autowired
 	private StudentService studentService;
 	
-	@GetMapping("/")
+	// GET METHODS
+	
+	@GetMapping("")
 	public String showDorms(Model model) {
 		model.addAttribute("dorms", dormService.allDorms());
 		return "showDorms.jsp";
@@ -47,13 +51,15 @@ public class DormController {
 		return "showStudents.jsp";
 	}
 	
+	// POST METHODS
+	
 	@PostMapping("/new")
 	public String createDorm(@Valid @ModelAttribute("dorm") Dorm dorm, BindingResult results) {
 		if (results.hasErrors()) {
 			return "dormForm.jsp";
 		} else {
 			dormService.createDorm(dorm);
-			return "redirect:/dorms/";
+			return "redirect:/dorms";
 		}
 	}
 	

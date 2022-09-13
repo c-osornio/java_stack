@@ -62,7 +62,9 @@
     		<tbody>
 				<c:forEach var="student" items="${dormStudents}">
 					<tr>
-						<td><c:out value="${student.name}"></c:out></td>
+						<td>
+							<a href="/students/<c:out value="${student.id}"/>"><c:out value="${student.name}"/></a>
+						</td>
 						<td><a href="/students/remove/${student.id}">Remove</a></td>
 					</tr>	
 				</c:forEach>

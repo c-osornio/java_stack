@@ -27,6 +27,10 @@
         	<a href="/dorms/new">Add a new Dorm!</a>
         	<br>
         	<a href="/students/new">Add a new Student!</a>
+        	<br>
+        	<a href="/classes/new">Add a new class!</a>
+        	<br>
+        	<a href="/classes">View all classes!</a>
         </div>
 
         <table class="table mt-3 table-dark text-warning rounded">
