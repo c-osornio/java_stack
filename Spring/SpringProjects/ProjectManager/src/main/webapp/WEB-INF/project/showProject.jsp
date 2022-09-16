@@ -23,7 +23,7 @@
 			<a href="/dashboard">Back to Dashboard</a>
 	</div>
 	<div class="container">
-        <table class="table table-striped mt-3">
+        <table class="table mt-3 text-white">
         	<tbody>
         		<tr>
         			<td> Project:

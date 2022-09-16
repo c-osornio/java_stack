@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group mt-1 row">
                     <h4>
-                        <form:label class="col col-form-label text-start" path="dueDate">Due Date: </form:label>
+                        <form:label class="col col-form-label" path="dueDate">Due Date: </form:label>
                         <form:errors class="text-danger fs-6" path="dueDate" />
                         <form:input class="form-control" path="dueDate" type="date" />
                     </h4>
