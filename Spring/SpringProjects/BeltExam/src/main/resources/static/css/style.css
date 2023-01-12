@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
 .log {
 	overflow: scroll;
 	height:300px;
 	width:1250px;
 	border:3px solid black;
+}
+
+.title {
+	font-family: 'Cinzel', serif;
 }

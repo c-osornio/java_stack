@@ -14,12 +14,15 @@
     <title>View Listing</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body style= "background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,186,176,1) 35%, rgba(0,212,255,1) 100%);">
 	<div class="container d-flex justify-content-between mt-5">
-			<h1 class="fw-bold text-white"><c:out value="${listing.address}"/></h1>
+			<h1 class="fw-bold text-white title"><c:out value="${listing.address}"/></h1>
 			<a href="/dashboard">Back to Dashboard</a>
 	</div>
 	<div class="container">
@@ -85,11 +88,11 @@
     <div class="container d-flex justify-content-center gap-3 mt-4">
     	<c:if test="${listing.getUser().equals(user)}">
 			<a href="/listings/${listing.id}/edit">
-				<button class="btn btn-warning text-white">edit</button>
+				<button class="btn btn-warning text-white">Edit</button>
 			</a>
 			<form action="/listings/${listing.id}/delete" method="post">
    				<input type="hidden" name="_method" value="delete">
-   				<button class="btn btn-danger">delete</button>
+   				<button class="btn btn-danger">Delete</button>
 			</form>
 		</c:if>
     </div>
