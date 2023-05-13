@@ -63,7 +63,7 @@ d<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="U
         </table>
 	</div>
 	<div class="container">
-		<a href="/listings/new"><button class="btn btn-primary btn-lg btn-block w-100">+ Add Listing</button></a>
+		<a href="/listings/new"><button class="btn btn-primary btn-lg btn-block w-100">+ Add New Listing</button></a>
 	</div>
 	
 </body>
