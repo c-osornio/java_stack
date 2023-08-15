@@ -1,5 +1,6 @@
 // package fundamentals.greetings;
 
+
 // File name must be the same as the class name
 // Every file IS a class
 public class Test {
